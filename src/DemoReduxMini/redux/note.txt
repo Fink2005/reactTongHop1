@@ -1,0 +1,9 @@
+
+--- initialState : chứa giá trị mặc định của state khi user load page
+
+--- reducer : nơi xử lý logic để update state
+
+--- action: object chứa data gửi từ component (UI) lên redux
+
+--- mapStateToProps : lấy data redux về component
+

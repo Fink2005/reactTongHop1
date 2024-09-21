@@ -1,0 +1,19 @@
+
+
+
+--- DataBinding : Đưa giá trị của 1 biến lên layout
+
+--- State : quản lý các data ảnh hưởng đến việc update layout ( re-render )
+
+
+
+--- RenderWithMap : dùng array.map để convert array data trở thành array component ( hiển thị array lên layout)
+
+
+--- this.props : giao tiếp giữa 2 component ( truyền dữ liệu )
+
+
+
+
+Áp dụng redux  để làm lại ExShoe
+
