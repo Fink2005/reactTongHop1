@@ -9,6 +9,15 @@
 }
 .ironMan { position: relative;
 }
+#gameOanTuTi {
+	position: relative;
+}
+#hpIronMan {
+	position: absolute;
+	bottom: 50%;
+	left: 20%;
+}
+
 .speech-bubble:after {
 	content: '';
 	position: absolute;

@@ -4,16 +4,36 @@ import { anPlay, raBao, raBua, raKeo } from "./reduxOanTuTi/actionOanTuTi";
 import "./buble.css";
 class MainOanTuTi extends Component {
   changeSpeach = () => {
-    let gameNe = this.props.game;
-    return gameNe === "Thanos: Perfect Balanced" ? (
-      <h1 className="text-danger py-3 fs-1 text-center">{gameNe}</h1>
+    let { game } = this.props;
+    return game === "Iron man: I AM IRON MAN" ? (
+      <h1 className="text-danger py-3 fs-1 text-center">{game}</h1>
     ) : (
-      <h1 className="text-info py-3 fs-1 text-center">{gameNe}</h1>
+      <h1 className="text-info py-3 fs-1 text-center">{game}</h1>
+    );
+  };
+  warningHpOfThanos = () => {
+    let { thanosHp } = this.props;
+    return thanosHp <= 30 ? (
+      <h1 className="text-danger ms-2">{thanosHp}</h1>
+    ) : (
+      <h1 className="text-success ms-2">{thanosHp}</h1>
+    );
+  };
+  warningHpOfIronMan = () => {
+    let { ironManHp } = this.props;
+    return ironManHp <= 30 ? (
+      <h1 className="text-danger ms-2">{ironManHp}</h1>
+    ) : (
+      <h1 className="text-success ms-2">{ironManHp}</h1>
     );
   };
   render() {
     return (
-      <div>
+      <div id="gameOanTuTi">
+        <div id="hpIronMan" className="d-flex">
+          <h1 className="text-danger">HP:</h1>
+          <h1 className="text-success ms-2">{this.warningHpOfIronMan()}</h1>
+        </div>
         <h1 className="mt-5 text-center text-success ">Oan tu ti game</h1>
         <div className="container d-flex justify-content-between">
           <div className="player">
@@ -100,8 +120,8 @@ class MainOanTuTi extends Component {
                 alt=""
               />
               <div className="d-flex justify-content-center">
-                <h1>HP: </h1>
-                <h1 className="text-info ms-2">100</h1>
+                <h1 className="text-info">HP: </h1>
+                {this.warningHpOfThanos()}
               </div>
             </div>
           </div>
@@ -117,7 +137,8 @@ let mapStateToProps = (state) => {
     game: state.game,
     goals: state.goals,
     total: state.total,
-    hp: state.hp,
+    thanosHp: state.thanosHp,
+    ironManHp: state.ironManHp,
   };
 };
 
