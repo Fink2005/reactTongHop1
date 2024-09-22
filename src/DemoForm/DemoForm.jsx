@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { message } from "antd";
 export default class DemoForm extends Component {
   state = {
-    username: "alice@123",
-    password: "abc123",
+    arr: [],
+    username: "abcdfgh",
+    password: "123456",
   };
   handleChangeForm = (event) => {
     console.log("event:", event.target);
@@ -14,10 +16,16 @@ export default class DemoForm extends Component {
       [name]: value,
     });
   };
+  handleShow = () => {
+    let { arr } = this.state;
+    return arr.map((item, index) => {
+      return <h3 key={index}>{item}</h3>;
+    });
+  };
   handleLogin = () => {
     let payload = {
       taiKhoan: this.state.username,
-      matKahu: this.state.password,
+      matKhau: this.state.password,
     };
     axios({
       url: "https://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/DangNhap",
@@ -27,7 +35,19 @@ export default class DemoForm extends Component {
         TokenCybersoft:
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCA3MSIsIkhldEhhblN0cmluZyI6IjE0LzAzLzIwMjUiLCJIZXRIYW5UaW1lIjoiMTc0MTkxMDQwMDAwMCIsIm5iZiI6MTcxNDA2NDQwMCwiZXhwIjoxNzQyMDU4MDAwfQ.aL6UU86iw9qfiazPYi9hHV3FjYthitqZbK5pBfChSiU",
       },
-    });
+    })
+      .then((result) => {
+        console.log(result);
+        console.log(result.data.content);
+        this.setState({
+          arr: result.data.content,
+        });
+        message.success("dang nhap thanh cong");
+      })
+      .catch((err) => {
+        console.log(err);
+        message.error("dang nhap that bai");
+      });
   };
 
   render() {
@@ -48,7 +68,8 @@ export default class DemoForm extends Component {
           type="text"
           placeholder="password"
         />
-        <button>Login</button>
+        <button onClick={this.handleLogin}>Login</button>
+        <div>{this.handleShow()}</div>
       </div>
     );
   }

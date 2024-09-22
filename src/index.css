@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url(../public/img/imgOanTuTi/bgGame.png);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 code {

@@ -8,11 +8,12 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import { composeWithDevTools } from "@redux-devtools/extension";
-import { shoeReducer } from "./ExShoeRedux/redux/reducer";
-
+// import { shoeReducer } from "./ExShoeRedux/redux/reducer";
+// import { diceReducer } from "./DoXucXac/ReduxXucXac/reducerXucXac";
+import { reducerOanTuTi } from "./MainOanTuTi/reduxOanTuTi/reducerOanTuTi";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // tạo store
-export let store = createStore(shoeReducer, composeWithDevTools());
+export let store = createStore(reducerOanTuTi, composeWithDevTools());
 root.render(
   <Provider store={store}>
     <App />

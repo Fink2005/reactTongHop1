@@ -1,7 +1,7 @@
 import { dataShoe } from "../dataShoe";
 import { ADD_SHOE, CHANGE_TOTAL, DELETE_SHOE } from "./contant";
 let initialState = {
-  cart: [],
+  cart: [6],
   listShoe: dataShoe,
 };
 
