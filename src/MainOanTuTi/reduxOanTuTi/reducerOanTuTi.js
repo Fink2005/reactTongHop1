@@ -65,17 +65,27 @@ export let reducerOanTuTi = (state = initialState, { type, payload }) => {
                 }
               } else if (state.thanosHp === 0) {
                 window.location.reload();
+              } else if (state.ironManHp === 0) {
+                window.location.reload();
               } else {
                 state.thanosHp += -10;
               }
             } else if (cloneIronManThinking[0].sign === "bao") {
               if (state.thanosHp === 0) {
                 window.location.reload();
+              } else if (state.ironManHp === 0) {
+                window.location.reload();
+              } else if (state.ironManHp === 20) {
+                state.ironManHp += -20;
+                alert("Thanos Win, you just lost the half people on the world");
+              } else {
+                state.ironManHp += -20;
               }
-              state.ironManHp += -20;
               state.game = "Thanos: Perfect Balanced";
             } else {
               if (state.thanosHp === 0) {
+                window.location.reload();
+              } else if (state.ironManHp === 0) {
                 window.location.reload();
               }
               state.game = "Thanos: You just lucky";
@@ -94,17 +104,27 @@ export let reducerOanTuTi = (state = initialState, { type, payload }) => {
                 }
               } else if (state.thanosHp === 0) {
                 window.location.reload();
+              } else if (state.ironManHp === 0) {
+                window.location.reload();
               } else {
                 state.thanosHp += -10;
               }
             } else if (cloneIronManThinking[0].sign === "keo") {
               if (state.thanosHp === 0) {
                 window.location.reload();
+              } else if (state.ironManHp === 0) {
+                window.location.reload();
+              } else if (state.ironManHp === 20) {
+                state.ironManHp += -20;
+                alert("Thanos Win, you just lost the half people on the world");
+              } else {
+                state.ironManHp += -20;
               }
-              state.ironManHp += -20;
               state.game = "Thanos: Perfect Balanced";
             } else {
               if (state.thanosHp === 0) {
+                window.location.reload();
+              } else if (state.ironManHp === 0) {
                 window.location.reload();
               }
               state.game = "Thanos: You just lucky";
@@ -122,18 +142,27 @@ export let reducerOanTuTi = (state = initialState, { type, payload }) => {
                 }
               } else if (state.thanosHp === 0) {
                 window.location.reload();
+              } else if (state.ironManHp === 0) {
+                window.location.reload();
               } else {
                 state.thanosHp += -10;
               }
             } else if (cloneIronManThinking[0].sign === "bua") {
               if (state.thanosHp === 0) {
                 window.location.reload();
+              } else if (state.ironManHp === 0) {
+                window.location.reload();
+              } else if (state.ironManHp === 20) {
+                state.ironManHp += -20;
+                alert("Thanos Win, you just lost the half people on the world");
+              } else {
+                state.ironManHp += -20;
               }
-              state.ironManHp += -20;
-
               state.game = "Thanos: Perfect Balanced";
             } else {
               if (state.thanosHp === 0) {
+                window.location.reload();
+              } else if (state.ironManHp === 0) {
                 window.location.reload();
               }
               state.game = "Thanos: You just lucky";
