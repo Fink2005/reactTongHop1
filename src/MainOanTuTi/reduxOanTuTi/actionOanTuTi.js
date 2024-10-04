@@ -16,6 +16,6 @@ export const raBao = (payload) => ({
 });
 
 export const anPlay = (payload) => ({
-  type: PLAY,
+  type: PLAY    ,
   payload,
 });

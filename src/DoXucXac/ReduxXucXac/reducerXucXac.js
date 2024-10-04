@@ -64,7 +64,7 @@ export let diceReducer = (state = initialState, { type, payload }) => {
           newDice.push(randomDice);
           console.log(newDice);
         }
-        state.dice = newDice;
+        state.dice = newDice
       }
       let totalWin = newDice.reduce(
         (accumulator, currentValue) => accumulator + currentValue.ma,
